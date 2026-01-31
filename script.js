@@ -59,7 +59,18 @@ myLinks.forEach((link, index) => {
     // Add staggered animation delay (makes them pop in one by one)
     a.style.animation = `fadeIn 0.5s ease-out forwards ${index * 0.1}s`;
     a.style.opacity = '0'; // Start hidden for animation to work
-
+    // --- Tracking Logic Start ---
+        a.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'link_click', {
+                    'event_category': 'Engagement',
+                    'event_label': link.text,
+                    'transport_type': 'beacon'
+                });
+            }
+        });
+        // --- Tracking Logic End ---
+    
     // Handle "Download" vs "Open in New Tab"
     if (link.download) {
         a.setAttribute('download', '');
