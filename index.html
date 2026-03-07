@@ -4,42 +4,44 @@
     <meta charset="UTF-8">
     <title>Shivam Bhardwaj | Connect</title>
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q94BSH31Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-4Q94BSH31Y');
     </script>
     
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="./assets/images/profile.webp">
+    <link rel="icon" type="image/webp" href="./assets/images/profile.webp">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Shivam Bhardwaj | Cloud & DevOps Links">
-    <meta property="og:description" content="Cloud & DevOps Engineer. Linux, AWS, Docker.">
+    <meta property="og:description" content="Linux Admin & Cloud Engineer. AWS, Docker, Kubernetes.">
+    <meta property="og:image" content="./assets/images/profile.webp"> 
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="Connect with Shivam Bhardwaj - Cloud Engineer & Linux Administrator. Professional links, portfolio, and resume.">
+    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
-    <meta property="og:image" content="./assets/images/profile.webp"> <meta name="theme-color" content="#0a0a0a">
-    <meta name="description" content="Connect with Shivam Bhardwaj - Cloud & DevOps Engineer. Professional links, portfolio, and resume.">
 </head>
 <body>
 
-    <div class="profile-container">
+    <header class="profile-container">
         <img 
-            alt="Shivam Bhardwaj" 
+            src="./assets/images/profile.webp"
+            alt="Shivam Bhardwaj Profile Picture" 
             class="profile-pic" 
             id="userPhoto" 
             fetchpriority="high"
         >
         
         <h1 class="name">Shivam Bhardwaj</h1>
-        <p class="bio">Cloud & DevOps Aspirant <br> 
-            <span class="location"><i class="fa-solid fa-location-dot"></i> Delhi, India</span>
+        <p class="bio">Linux Admin & Cloud Engineer <br> 
+            <span class="location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Delhi, India</span>
         </p>
-    </div>
+    </header>
 
-    <main id="links-container"></main>
+    <main id="links-container" aria-label="Social and Professional Links"></main>
 
     <footer>
         <p>© <span id="year"></span> Shivam Bhardwaj. <br>Built with code & infrastructure in mind.</p>

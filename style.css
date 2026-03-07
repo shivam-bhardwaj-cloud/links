@@ -1,12 +1,13 @@
 /* --- PREMIUM DARK & GOLD THEME --- */
 :root {
-    --bg-color: #0a0a0a;       /* Deepest Black */
-    --card-bg: #151515;        /* Card Background */
-    --gold-primary: #E5C15D;   /* Metallic Gold */
-    --gold-hover: #FFD700;     /* Brighter Gold */
+    /* Matched exactly to your main portfolio colors */
+    --bg-color: #050505;       
+    --card-bg: #111111;        
+    --gold-primary: #D4AF37;   
+    --gold-hover: #B5952F;     
     --text-main: #ffffff;
-    --text-sub: #d0d0d0;
-    --border-dim: #333333;
+    --text-sub: #a0a0a0;
+    --border-dim: rgba(212, 175, 55, 0.2); 
 }
 
 * {
@@ -18,12 +19,13 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
     padding: 60px 20px;
+    overflow-x: hidden;
 }
 
 /* --- PROFILE SECTION --- */
@@ -38,9 +40,12 @@ body {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--gold-primary);
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.15); /* Soft Gold Glow */
+    /* Updated border to use the conic gradient from portfolio for consistency */
+    padding: 4px;
+    background: conic-gradient(from 180deg at 50% 50%, var(--gold-primary) 0deg, var(--gold-hover) 180deg, var(--gold-primary) 360deg);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15); 
     margin-bottom: 15px;
+    display: inline-block;
 }
 
 .name {
@@ -92,7 +97,6 @@ body {
     overflow: visible;
 }
 
-/* Icon Styling */
 .link-card i {
     position: absolute;
     left: 25px;
@@ -107,12 +111,11 @@ body {
     z-index: 2;
 }
 
-/* Hover Effects */
 .link-card:hover {
     border-color: var(--gold-primary);
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    background-color: #1a1a1a;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+    background-color: rgba(212, 175, 55, 0.05);
 }
 
 .link-card:hover i {
@@ -127,7 +130,6 @@ footer {
     text-align: center;
     color: var(--text-sub);
     font-size: 0.8rem;
-    /* opacity: 0.6; */
     line-height: 1.6;
 }
 
@@ -137,17 +139,13 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile Tweaks */
 @media (max-width: 400px) {
     .link-card { padding: 15px 20px; }
     .name { font-size: 1.4rem; }
     .link-card i { left: 20px; }
 }
 
-/* =========================================
-   EMAIL HOVER TOOLTIP (LinkHub)
-   ========================================= */
-
+/* --- EMAIL HOVER TOOLTIP --- */
 .email-hover {
     position: relative;
 }
@@ -158,14 +156,13 @@ footer {
     bottom: 120%;
     left: 50%;
     transform: translateX(-50%);
-
     background: #000;
     color: var(--gold-primary);
+    border: 1px solid var(--border-dim);
     padding: 8px 14px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 0.85rem;
     white-space: nowrap;
-
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
