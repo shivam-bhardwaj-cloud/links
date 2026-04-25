@@ -174,3 +174,23 @@ footer {
     opacity: 1;
     transform: translateX(-50%) translateY(-6px);
 }
+
+/* Share Button ko thoda alag dikhane ke liye */
+.share-btn {
+    background: linear-gradient(135deg, #FFD700, #FFA500) !important; /* Gold gradient */
+    color: #000 !important;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px; /* Baki links se thoda niche */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.share-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #FFA500, #FFD700) !important;
+}
+
+.share-btn i {
+    color: #000 !important;
+}
