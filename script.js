@@ -55,11 +55,11 @@ myLinks.forEach((link, index) => {
     a.style.opacity = '0'; 
 
     a.addEventListener('click', () => {
-        if (typeof gtag === 'function') {
-            gtag('event', 'link_click', {
-                'event_category': 'Engagement',
-                'event_label': link.text,
-                'transport_type': 'beacon'
+    if (typeof gtag === 'function') {
+        gtag('event', 'select_content', {
+            'content_type': 'link',
+            'item_id': link.text.toLowerCase().replace(/\s+/g, '_'), // Example: "linkedin_profile"
+            'method': 'linkhub_click'
             });
         }
     });
@@ -84,3 +84,25 @@ myLinks.forEach((link, index) => {
 
     container.appendChild(a);
 });
+
+// Profile Sharing
+
+if (navigator.share) {
+    const shareBtn = document.createElement('a');
+    shareBtn.className = 'link-card share-btn';
+    shareBtn.style.cursor = 'pointer'; // Taaki pata chale ye click hoga
+    shareBtn.innerHTML = `
+        <i class="fa-solid fa-share-nodes"></i> 
+        <span class="link-text">Share My Profile</span>
+    `;
+    
+    shareBtn.onclick = (e) => {
+        e.preventDefault(); // Page refresh hone se rokne ke liye
+        navigator.share({
+            title: 'Shivam Bhardwaj | Cloud Engineer',
+            url: window.location.href
+        }).catch(console.error); // Agar koi error aaye toh console mein dikhe
+    };
+    
+    container.appendChild(shareBtn);
+}
