@@ -17,7 +17,7 @@ const myLinks = [
     },
     { 
         text: "Resume", 
-        url: "https://shivam-bhardwaj-cloud.github.io/portfolio/assets/docs/resume/Shivam%20Bhardwaj%20Linux%20Admin.pdf", 
+        url: "https://shivam-bhardwaj-cloud.github.io/portfolio/assets/docs/resume/Shivam_Bhardwaj_DevOps_Engineer.pdf", 
         icon: "fa-solid fa-file-arrow-down",
         download: true 
     },
