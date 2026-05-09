@@ -99,7 +99,7 @@ if (navigator.share) {
     shareBtn.onclick = (e) => {
         e.preventDefault(); // Page refresh hone se rokne ke liye
         navigator.share({
-            title: 'Shivam Bhardwaj | Cloud Engineer',
+            title: 'Shivam Bhardwaj | Cloud & DevOps Engineer',
             url: window.location.href
         }).catch(console.error); // Agar koi error aaye toh console mein dikhe
     };
